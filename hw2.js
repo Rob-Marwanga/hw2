@@ -34,6 +34,30 @@ let blockchain = [
 // Ben's KelloggCoin balance is 10350
 // Jeff's KelloggCoin balance is 2650
 
-console.log("Brian's KelloggCoin balance is " + getBalance("brian"));
-console.log("Ben's KelloggCoin balance is " + getBalance("ben"));
-console.log("Jeff's KelloggCoin balance is " + getBalance("jeff"));
+class Blockchain {
+  constructor(fromUser, toUser, amount) {
+    this.fromUser = fromUser;
+    this.toUser = toUser;
+    this.amount= amount;
+  }
+}
+
+  let brian= new Blockchain(null,"brian",(blockchain[0].amount-blockchain[1].amount-blockchain[2].amount-blockchain[4].amount+blockchain[5].amount))
+  let ben= new Blockchain(null,"ben",(blockchain[1].amount-blockchain[3].amount+blockchain[6].amount))
+  let jeff= new Blockchain(null,"jeff",(blockchain[2].amount+blockchain[3].amount+blockchain[4].amount-blockchain[5].amount-blockchain[6].amount))
+
+  getBalance= function(firstName) {
+    return brian.amount
+  }
+
+  getBalance1= function(firstName) {
+    return ben.amount
+  }
+
+  getBalance2= function(firstName) {
+    return jeff.amount
+  }
+
+console.log("Brian's KelloggCoin balance is "+ getBalance("brian"));
+console.log("Ben's KelloggCoin balance is " + getBalance1("ben"));
+console.log("Jeff's KelloggCoin balance is " + getBalance2("jeff"));
